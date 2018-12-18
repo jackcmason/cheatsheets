@@ -1,0 +1,76 @@
+\documentclass{article}
+\title{\vspace{-2.25cm}{\small MongoDB}\vspace{-1.5cm}}
+\date{}
+\pagenumbering{gobble}
+\usepackage[margin=1cm,landscape,a4paper]{geometry}
+\usepackage{multicol}
+\setlength{\columnseprule}{0.2pt}
+
+\usepackage{listings}
+\lstset{
+	basicstyle=\ttfamily,
+	columns=flexible,
+	breaklines=true
+}
+
+\begin{document}
+\maketitle
+\begin{multicols}{3}
+\section{Notes}
+\begin{itemize}
+\item Object are automatically given a primary key
+\item Different objects can have different key/pair values ("fields")
+\end{itemize}
+\section{Data}
+\begin{itemize}
+\item database is \texttt{alpha}
+\item collection is \texttt{beta}
+\end{itemize}
+\section{Setup}
+\subsection{To start mongodb shell}
+\lstinline|$ mongodb|
+\subsection{Create User}
+\lstinline|$ db.createUser({user:"brad",pwd:"1234",roles:["readWrite", "dbAdmin"]});|
+\subsection{Create/Switch Database}
+\lstinline|$ use alpha|
+\subsection{Create Collection}
+\lstinline|$ db.createCollection('beta');|
+\subsection{Delete Collection}
+\lstinline|$ db.beta.drop()|
+\section{Commands}
+\subsection{Clear Display}
+\lstinline|$ cls|
+\subsection{show databases}
+\lstinline|$ show dbs|
+\subsection{check current database}
+\lstinline|$ db|
+\subsection{show collections in db}
+\lstinline|$ show collections|
+\subsection{Insert object into collection}
+\lstinline|$ db.beta.insert([{first_name:"John", last_name:"Doe"},{first_name:"Jane", last_name:"Doe"}]);|
+\subsection{List objects in collection}
+\lstinline|$ db.beta.find().pretty();|\\
+\lstinline|$ db.beta.find({$or:[{first_name:"Jane"},{first_name:"John"}]});|\\
+\lstinline|$ db.beta.find({age:{$lt:40}});|\\
+\lstinline|$ db.beta.find({"address.city":"Brisbane"});|\\
+\subsection{Update object in collection}
+\lstinline|$ db.beta.update({first_name:"John"},{first_name:"John", last_name:"Doe", gender:"male"});|\\
+\lstinline|$ db.beta.update({first_name:"John"},{$set:{gender:"male"}});|
+\subsection{Increment object value}
+\lstinline|$ db.beta.update(first_name:"Steven",{$inc:{age:5}});|
+\subsection{Remove object key}
+\lstinline|$ db.beta.update({first_name:"Steven"},{$unset:{age:1}})|
+\subsection{Insert object if it doesn't exist}
+\lstinline|$ db.beta.update({first_name:"Jane"},{first_name:"Jane",last_name:"Doe"},{upsert: true});|
+\subsection{Update object key}
+\lstinline|$ db.beta.update({first_name:"John"},{$rename:{"jender":"sex"}});|
+\subsection{Remove object from collection}
+\lstinline|$ db.beta.remove({firstname:"John"},{justOne:true});|
+\subsection{Sort objects}
+\lstinline|$ db.beta.find().sort({last_name:1});|
+\subsection{Count objects}
+\lstinline|$ db.beta.find().count();|
+\subsection{Iterate objects}
+\lstinline|$ db.beta.find().forEach(function(i){print("Customer Name: "+i.first_name)});|
+\end{multicols}
+\end{document}

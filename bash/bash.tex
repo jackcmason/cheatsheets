@@ -1,0 +1,38 @@
+\documentclass{article}
+\title{\vspace{-2.25cm}{\small NPM}\vspace{-1.5cm}}
+\date{}
+\pagenumbering{gobble}
+\usepackage[margin=1cm,landscape,a4paper]{geometry}
+\usepackage{multicol}
+\setlength{\columnseprule}{0.2pt}
+
+\usepackage{listings}
+\lstset{
+	basicstyle=\ttfamily,
+	columns=flexible,
+	breaklines=true
+}
+
+\begin{document}
+\maketitle
+\begin{multicols}{3}
+\section{Notes}
+\begin{itemize}
+\item Object are automatically given a primary key
+\item Different objects can have different key/pair values ("fields")
+\end{itemize}
+\section{Data}
+\begin{itemize}
+\item database is \texttt{alpha}
+\item collection is \texttt{beta}
+\end{itemize}
+\section{Setup}
+\subsection{Install project dependencies}
+\lstinline|$ npm install|
+\subsection{Start npm project}
+\lstinline|$ npm start|
+\section{Commands}
+\subsection{Check globally install packages}
+\lstinline|$ npm list -g --depth 0|
+\end{multicols}
+\end{document}
