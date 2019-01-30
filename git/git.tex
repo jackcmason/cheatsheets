@@ -37,16 +37,6 @@
 \lstinline|$ git init|
 \section{Commands}
 
-\subsection{Add file to git}
-\lstinline|$ git add alpha|
-
-\subsection{Stage all files}
-\lstinline|$ git add -A|
-\lstinline|$ git add .|
-
-\subsection{Stage all "not new" files}
-\lstinline|$ git add -u|
-
 \subsection{Amend local git commit}
 \lstinline|$ git commit --amend|
 
@@ -66,5 +56,25 @@ git reset --hard
 \subsubsection{List Stashes}
 \lstinline|$ git stash list|
 
+\subsection{Create Remote Branch}
+\lstinline|$ git push --set-upstream origin branchname|
+
+\section{Stageing}
+\subsection{Stage file}
+\lstinline|$ git add alpha|
+
+\subsection{Stage all files}
+\lstinline|$ git add -A|
+\lstinline|$ git add .|
+
+\subsection{Stage all modified files}
+\lstinline|$ git add -u|
+
+\section{"Squashing"}
+SHA should be the node of the branch to be squashed
+\lstinline|$ git rebase -i [SHA]|
+"pick" one commit, "f" the others
+\lstinline|$ git commit --amend -e|
+then edit commit message
 \end{multicols}
 \end{document}
