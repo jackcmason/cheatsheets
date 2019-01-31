@@ -1,0 +1,38 @@
+\documentclass{article}
+\title{\vspace{-2.25cm}{\small SQL}\vspace{-1.5cm}}
+\date{}
+\pagenumbering{gobble}
+\usepackage[margin=1cm,landscape,a4paper]{geometry}
+\usepackage{multicol}
+\setlength{\columnseprule}{0.2pt}
+
+\usepackage{listings}
+\lstset{
+	basicstyle=\ttfamily,
+	columns=flexible,
+	breaklines=true
+}
+
+\begin{document}
+\maketitle
+\begin{multicols}{3}
+	
+\section{Notes}
+\section{Data}
+\section{Setup}
+\section{Commands}
+
+\subsection{Create Table}
+\lstinline|CREATE TABLE IF NOT EXIST table_name (column TYPE AUTO_INCREMENT, PRIMARY KEY (id));|
+
+\subsection{Show Tables}
+\lstinline|SHOW TABLES|
+
+\subsection{Get all rows of Table}
+\lstinline|SELECT * FROM table|
+
+\subsection{Insert Row}
+\lstinline|INSERT INTO table(col1, col2) VALUES (value1, value2)|
+
+\end{multicols}
+\end{document}
