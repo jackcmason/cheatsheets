@@ -39,5 +39,15 @@
 
 \subsection{Delete Column from Table}
 \lstinline|ALTER TABLE "table_name" DROP "column_name";|
+
+\subsection{Alter Column Type}
+\lstinline|ALTER TABLE locations MODIFY COLUMN location_id INT AUTO_INCREMENT;|
+
+\subsection{Alter Column}
+\lstinline|ALTER TABLE persons CHANGE id person_id INT;|
+
+\subsection{Table JOIN Example}
+\lstinline|SELECT kits.name, kitlocations.location FROM kits JOIN kitlocations ON kits.id = kitlocations.kit;|
+
 \end{multicols}
 \end{document}
