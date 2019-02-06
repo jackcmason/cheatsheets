@@ -50,7 +50,9 @@
 \lstinline|SELECT kits.name, kitlocations.location FROM kits JOIN kitlocations ON kits.id = kitlocations.kit;|
 
 \subsection{Conditional Selection}
-\lstinline|SELECT * FROM student WHERE name = ‘dan’;|
+\lstinline|SELECT * FROM student WHERE name= 'dan';|
 
+\subsection{Conditional Column Update}
+\lstinline|update kitlocations set check_id = 7 where location_id < 8;|
 \end{multicols}
 \end{document}
