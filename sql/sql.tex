@@ -54,5 +54,9 @@
 
 \subsection{Conditional Column Update}
 \lstinline|update kitlocations set check_id = 7 where location_id < 8;|
+
+\subsection{Update Row}
+\lstinline|INSERT into kitlocations(kit_id, location_id, check_id) VALUES (5, 2, null) ON DUPLICATE KEY UPDATE location_id=2, check_id=null;|
+
 \end{multicols}
 \end{document}
