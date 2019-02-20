@@ -58,5 +58,8 @@
 \subsection{Update Row}
 \lstinline|INSERT into kitlocations(kit_id, location_id, check_id) VALUES (5, 2, null) ON DUPLICATE KEY UPDATE location_id=2, check_id=null;|
 
+\subsection{Node Compatability Command}
+\lstinline|ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'|
+
 \end{multicols}
 \end{document}
