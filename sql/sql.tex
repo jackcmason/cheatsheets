@@ -61,5 +61,10 @@
 \subsection{Node Compatability Command}
 \lstinline|ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'|
 
+\subsection{Joining a Table Multiple Times}
+\lstinline|select persongroup.group_id, persons.person_identifier, p2.person_identifier, p3.person_identifier from persongroup|
+\lstinline|left outer join persons on persongroup.person_id_1 = persons.person_id|
+\lstinline|left outer join persons as p2 on persongroup.person_id_2 = p2.person_id|
+\lstinline|left outer join persons as p3 on persongroup.person_id_3 = p3.person_id|
 \end{multicols}
 \end{document}
